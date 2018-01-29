@@ -48,6 +48,9 @@ function checkSession () {
   }, function (err, result) {
     if (err) {
       alert(`Could not get a new token using silent authentication (${err.error}). Opening login page...`);
+      $('#app').hide();
+      $('#logout').hide();
+      lock.hide();
       $('#login').show();
     } else {
       saveAuthResult(result);
